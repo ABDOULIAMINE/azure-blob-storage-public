@@ -1,0 +1,29 @@
+OBJECT Codeunit 50000 Copy File to Other Domain
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+    OnRun=BEGIN
+          END;
+
+  }
+  CODE
+  {
+
+    PROCEDURE CopyFile@1000000000(FromFileName@1000000001 : Text;VAR ToFileName@1000000002 : Text);
+    BEGIN
+      CopyToPublicBlobStorage(FromFileName, ToFileName);
+    END;
+
+    [Integration]
+    LOCAL PROCEDURE CopyToPublicBlobStorage@1000000001(FromAzureURL@1000000001 : Text;VAR ToAzureURL@1000000000 : Text);
+    BEGIN
+    END;
+
+    BEGIN
+    END.
+  }
+}
+

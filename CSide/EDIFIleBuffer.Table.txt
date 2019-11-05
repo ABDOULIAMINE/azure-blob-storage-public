@@ -1,0 +1,47 @@
+OBJECT Table 50206 EDI File Buffer
+{
+  OBJECT-PROPERTIES
+  {
+    Date=28-06-19;
+    Time=11:58:02;
+    Version List=VOS4.11.000;
+  }
+  PROPERTIES
+  {
+    DataPerCompany=No;
+  }
+  FIELDS
+  {
+    { 2   ;   ;Filename            ;Text250        }
+    { 3   ;   ;Error Message       ;Text250        }
+    { 4   ;   ;Blob                ;BLOB           }
+  }
+  KEYS
+  {
+    {    ;Filename                                ;Clustered=Yes }
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+
+    PROCEDURE LogFileWithError@1000000006(EDIConfiguration@1000000000 : Record 50042);
+    VAR
+      EDIFilewithError@1000000001 : Record 50039;
+    BEGIN
+      IF EDIFilewithError.GET(EDIConfiguration.Filename) THEN
+        EXIT;
+
+      EDIFilewithError."EDI Configuration Code" := EDIConfiguration.Code;
+      //EDIFilewithError.Path := Files.Path;
+      EDIFilewithError."File Name" := EDIConfiguration.Filename;
+      EDIFilewithError."Error Message" := GETLASTERRORTEXT;
+      EDIFilewithError.INSERT;
+    END;
+
+    BEGIN
+    END.
+  }
+}
+

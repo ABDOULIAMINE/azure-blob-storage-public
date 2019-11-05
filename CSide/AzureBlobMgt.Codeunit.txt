@@ -1,0 +1,71 @@
+OBJECT Codeunit 50240 Azure Blob Mgt.
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+    OnRun=BEGIN
+          END;
+
+  }
+  CODE
+  {
+
+    [External]
+    PROCEDURE DownloadToClientFromAzureBlobStorage@1000000000(VAR TempFileName@1000000001 : Text;AzureBlobURL@1000000000 : Text);
+    BEGIN
+      DownloadToClientFromAzureBlobStorageEvent(TempFileName, AzureBlobURL);
+    END;
+
+    [Integration]
+    LOCAL PROCEDURE DownloadToClientFromAzureBlobStorageEvent@1000000001(VAR TempFileName@1000000001 : Text;AzureBlobURL@1000000000 : Text);
+    BEGIN
+    END;
+
+    [External]
+    PROCEDURE DownloadToServerFromAzureBlobStorage@1000000004(VAR TempFileName@1000000001 : Text;AzureBlobURL@1000000000 : Text);
+    BEGIN
+      DownloadToServerFromAzureBlobStorageEvent(TempFileName, AzureBlobURL);
+    END;
+
+    [Integration]
+    LOCAL PROCEDURE DownloadToServerFromAzureBlobStorageEvent@1000000003(VAR TempFileName@1000000001 : Text;AzureBlobURL@1000000000 : Text);
+    BEGIN
+    END;
+
+    PROCEDURE UploadToAzureBlobStorage@1000000009(TempFileName@1000000000 : Text;AzureURL@1000000001 : Text);
+    BEGIN
+      UploadToAzureBlobStorageEvent(TempFileName, AzureURL);
+    END;
+
+    [Integration]
+    LOCAL PROCEDURE UploadToAzureBlobStorageEvent@1000000002(TempFileName@1000000000 : Text;AzureURL@1000000001 : Text);
+    BEGIN
+    END;
+
+    PROCEDURE UploadStreamToAzureBlobStorage@1000000005(VAR Stream@1000000000 : InStream;AzureBlobURL@1000000001 : Text);
+    BEGIN
+      UploadStreamToAzureBlobStorageEvent(Stream, AzureBlobURL);
+    END;
+
+    [Integration]
+    LOCAL PROCEDURE UploadStreamToAzureBlobStorageEvent@1000000006(VAR Stream@1000000001 : InStream;AzureBlobURL@1000000000 : Text);
+    BEGIN
+    END;
+
+    PROCEDURE DeleteAzureBlob@1000000007(AzureBlobURL@1000000000 : Text);
+    BEGIN
+      DeleteAzureBlobEvent(AzureBlobURL);
+    END;
+
+    [Integration]
+    LOCAL PROCEDURE DeleteAzureBlobEvent@1000000008(AzureBlobURL@1000000000 : Text);
+    BEGIN
+    END;
+
+    BEGIN
+    END.
+  }
+}
+

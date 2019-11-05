@@ -1,0 +1,36 @@
+OBJECT Table 50039 EDI File with Error
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  FIELDS
+  {
+    { 1   ;   ;File Name           ;Text250        }
+    { 2   ;   ;Error Message       ;Text250        }
+    { 3   ;   ;Processed           ;Boolean        }
+    { 4   ;   ;EDI Configuration Code;Code10       }
+    { 5   ;   ;Path                ;Text250        }
+  }
+  KEYS
+  {
+    {    ;File Name                               ;Clustered=Yes }
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+
+    PROCEDURE OpenFile@1000000000();
+    BEGIN
+      HYPERLINK(Path + '\' + "File Name");
+    END;
+
+    BEGIN
+    END.
+  }
+}
+
