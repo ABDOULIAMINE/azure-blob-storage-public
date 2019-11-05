@@ -1,0 +1,25 @@
+{
+  "id": "8675d4de-22ab-45d1-9319-fbc168a97fac",
+  "name": "Azure Blob Storage",
+  "publisher": "Mark Brummel",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "11.0.0.0",
+  "application": "11.0.0.0",
+  "idRange": {
+    "from": 50021,
+    "to": 50021
+  },
+  "runtime": "2.0",
+  "target": "Internal",
+  "showMyCode": true
+}
